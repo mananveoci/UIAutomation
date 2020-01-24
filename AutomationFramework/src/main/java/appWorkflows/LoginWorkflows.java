@@ -20,19 +20,17 @@ public class LoginWorkflows
 	LoginPage loginPage=new LoginPage();
 	TopBar header=new TopBar();
 
-	public void LoginAndNavigateToRoom(RemoteWebDriver driver, String userName, String password) throws Exception 
+	public void LoginAndNavigateToRoom(RemoteWebDriver driver, String userName)  
 	{
-		loginPage.enterUserName(driver, userName);
-		loginPage.clickOnNextButton(driver);
-		loginPage.enterPassword(driver, password);
-		loginPage.clickOnSubmitutton(driver);
+		loginPage.enterSearchSite(driver, userName);
+		loginPage.clickFacebookLink(driver);
 //		loginPage.clickMenus(driver);
 //		loginPage.clickGmailLink(driver);
 		
 	}
 	
 	public void verifyGmailLoginSucessfully(RemoteWebDriver driver ,SoftAssert softAssert) {
-//		softAssert.assertTrue(loginPage.isGmailPageDisplayed(driver), "user are not able to login on gmail");
+		softAssert.assertTrue(loginPage.isFacebookPageDisplayed(driver), "Facebook title is not displayed on page");
 	}
 
 	public void goToSeleniumRoom(RemoteWebDriver driver,String roomID)  {

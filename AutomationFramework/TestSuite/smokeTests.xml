@@ -9,7 +9,7 @@
 	</listeners>
 
 
-	<test name="Gmail login Smoke Test Run">
+	<test name="Facebook Smoke Test Run">
 		<groups>
 			<run>
 				<include name="smoke" />

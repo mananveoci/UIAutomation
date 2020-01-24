@@ -57,12 +57,12 @@ public class GmailLoginTests {
 	}
 
 	@Test(groups = { "smoke" },singleThreaded=true)
-	public void verifyGmailLoging() throws Exception 
+	public void verifyFacebookPage() throws Exception 
 	{
 		log.info("Present online user verifyPresentUser() Test Started"); 
 		softAssert = new SoftAssert();
 
-		loginWorkflows.LoginAndNavigateToRoom(this.driver, fileOperations.getValueFromPropertyFile(constants.CONFIG_WEB_FILE_PATH, "username"), encryptionDecryptionObj.decryptPassword(fileOperations.getValueFromPropertyFile(constants.CONFIG_WEB_FILE_PATH, "password")));	
+//		loginWorkflows.LoginAndNavigateToRoom(this.driver,"facebook.com");	
 		loginWorkflows.verifyGmailLoginSucessfully(driver, softAssert);
 		softAssert.assertAll();
 		ReportListener.logToReport("Verified present online users in user list.");
